@@ -1,0 +1,98 @@
+{% extends 'base_main.html' %}
+{% load static %}
+
+{% block extcss %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="/static/css/statement.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/postorder.css">
+{% endblock %}
+
+{% block extjs %}
+    {{ block.super }}
+    <script>document.write('<script src="//' + (location.host || 'localhost').split(':')[0] + ':35929/livereload.js?snipver=1"></' + 'script>')</script>
+    <script src="{% static 'js/cart.js' %}"></script>
+    <script src="{% static 'js/postorder.js' %}"></script>
+{% endblock %}
+
+{% block title %}订单{% endblock %}
+
+{#把头部去掉#}
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <div id="content">
+        <div class="receive_box">
+            <h3>选择收货地址<a href="{% url 'ZOL:receiveinfo' %}">新增收货地址>></a></h3>
+            <div>
+                <ul class="receive_list">
+                    {% for receive in receives %}
+                        <li class="receive_info" receive_id="{{ receive.id }}">
+                            <p>
+                                {% if forloop.counter == 1 %}
+                                    <input class="receive_select" name="receive_select" type="radio" checked style="width: 15px;height: 15px">
+                                {% else %}
+                                    <input class="receive_select" name="receive_select" type="radio" style="width: 15px;height: 15px">
+                                {% endif %}
+
+                                <span>收货人：{{ receive.person }}</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span>收货手机：{{ receive.phone }}</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span>收货地址：{{ receive.address }}</span>
+                            </p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="title"><span>确认订单信息</span></div>
+        <div class="goodtotal">
+            <table>
+                <tbody>
+                <tr>
+{#                    <th><input class="chose" type="checkbox"></th>#}
+{#                    <th class="cell1">店铺:<a href="#">数码风暴专营店</a> </th>#}
+                    <th class="cell1">商品信息</th>
+                    <th class="cell2">版本</th>
+                    <th class="cell2">单价</th>
+                    <th class="cell3">数量</th>
+                    <th class="cell4">金额</th>
+                </tr>
+                {% for order_good in order_goods %}
+                    <tr class="good_list">
+                        <td class="good_img">
+                            <img src="{{ order_good.goods.img }}" >
+                            <span>{{ order_good.goods.brand.cname }} {{ order_good.goods.name }}</span>
+                        </td>
+                        <td class="good_version">
+                            <span>
+                                颜色：{{ order_good.color }}<br>
+                                运行内存：{{ order_good.ram }}<br>
+                                只读内存：{{ order_good.rom }}
+                            </span>
+                        </td>
+                        <td class="good_price">
+                            ¥&nbsp;<span>{{ order_good.goods.price }}</span>
+                        </td>
+                        <td class="good_num">&nbsp;
+                            <span>{{ order_good.num }}</span>&nbsp;
+                        </td>
+                        <td class="good_total">
+                            ¥<span></span>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </tbody></table>
+            <div class="handle" style="width: 1050px;">
+                <div style="width: 850px;">
+                    <span class="cart_num" style="margin-left: 500px;">已选择商品 <b>{{ order_goods|length }}</b> 件 </span>
+                    <span class="cart_total">合计（不含运费）：<b>{{ order.order_price }}</b></span>
+                </div>
+                <button class="order_submit submit" order_id="{{ order.order_id }}">提交订单</button>
+            </div>
+        </div>
+
+
+    </div>
+
+{% endblock %}

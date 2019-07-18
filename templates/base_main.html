@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extcss %}
+    <link rel="stylesheet" href="{% static 'css/display.css' %}">
+{% endblock %}
+
+{% block extjs %}
+    <script src="{% static 'js/base_main.js' %}"></script>
+    <script>
+        $.ajaxSetup({
+            data: {csrfmiddlewaretoken:'{{ csrf_token }}'}
+        })
+    </script>
+{% endblock %}
+
+{#最上面的导航栏#}
+{% block sign %}
+    <div id="sign">
+        <div class="toper">
+            <div class="login_info">
+                <span class="back-home"><a href="{% url 'ZOL:index' %}">商城首页</a> </span>
+                {% if user.username %}
+                    <span class="nav_user">Hi,{{ user.username }}</span>&nbsp;&nbsp;
+                    <span><a href="{% url 'ZOL:logout' %}">注销</a> </span>
+                {% else %}
+                    <span class="register">Hi~欢迎来到ZOL商城，<a href="{% url 'ZOL:login' %}">请登录</a> </span>&nbsp;&nbsp;&nbsp;
+                    <span class="register"><a href="{% url 'ZOL:register' %}">免费注册</a> </span>
+                {% endif %}
+
+            </div>
+            <ul class="qucik_menu">
+                <li class="myorder"><a href="{% url 'ZOL:order' %}">我的订单</a></li>
+                <li class="buycenter">
+                    <a href="#">买家中心</a>
+                    <div class="buycenter_info">
+                            <a href="#">我的优惠卷</a><em>0</em>
+                            <a href="#">关注的店铺</a><em>0</em>
+                            <a href="#">关注的商品</a><em>0</em>
+                    </div>
+                </li>
+                <li class="shopcar"><a href="{% url 'ZOL:cart' %}">购物车</a></li>
+                <li class="helpcenter"><a href="#">帮助中心</a></li>
+                <li class="separator"><a href="#">|</a></li>
+                <li class="menu_phone">
+                    <a href="#">手机商城</a>
+                    <div class="menu_phone_pic">
+                        <img src="/static/img/shop_wechat.png" alt="">
+                    </div>
+                </li>
+                <li class="zolonline"><a href="#">中关村在线</a></li>
+                <li class="seller"><a href="#">商家入驻</a></li>
+                <li class="con_ser">
+                    <a href="#">联系客服</a>
+                    <div class="con_ser_phone">
+                        400-678-0068
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+
+{#ZOL商城头部#}
+{% block header %}
+    <div id="search">
+        <div class="header">
+            <div class="logo">
+                    <h1>
+                        <a href="{% url 'ZOL:index' %}"><img src="/static/img/logo_180x50.png" alt=""></a>
+                    </h1>
+                    <p>中关村在线旗下网上商城</p>
+            </div>
+
+            {#搜索栏,首页，商品列表，商品详情均有此项#}
+            {% block search %}
+
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+

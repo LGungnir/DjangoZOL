@@ -1,0 +1,732 @@
+
+{#--------------------------------ZOL商城首页--------------------------------#}
+
+{% extends 'base_ext.html' %}
+{% load static %}
+
+{% block extjs %}
+    <script src="{% static 'js/base_main.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+{% endblock %}
+
+{% block title %}ZOL商城首页{% endblock %}
+
+{#首页顶部广告#}
+{% block sign %}
+    {{ block.super }}
+    <div id="new_product">
+        <div class="top-acitve-link">
+            <a href="#"><img src="/static/img/1200-602.jpg" alt=""></a>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block nav_else %}
+    <div class="nav_box_right">
+        <div class="focus_inner">
+            {# 大轮播图Ajax传#}
+            <ul class="changeimg" style="left: -740px;">
+            </ul>
+            <ul class="bar">
+            </ul>
+        </div>
+        <div class="side">
+            <a href="#"><img src="/static/img/baozhang.jpg"></a>
+            <div class="shoptitle">
+                <h3>商城公告</h3>
+                <ul class="shoptitle_ul">
+                    <li><a href="#">[热销]多款固态硬盘促销进行时!</a> </li>
+                    <li><a href="#">[团购]iphone 7 Plus 开始预订!</a> </li>
+                    <li><a href="#">[省千元]联想710S 256G版降千元!</a> </li>
+                    <li><a href="#">[现货]1060甜品级显卡热卖!</a> </li>
+                    <li><a href="#">[福利]升级多多!小编攒机福利!</a> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{#首页主体内容#}
+{% block content %}
+    <div id="content">
+        <div class="con_body">
+            <div class="selection_title">
+                <h1></h1>
+                <span><a href="#">更多团购&gt;</a></span>
+            </div>
+            <div class="tuan_list">
+                <ul>
+                </ul>
+            </div>
+
+            <div class="selection_title">
+                <h2></h2>
+            </div>
+            <div class="special_list">
+                <ul>
+                    <li><a href="#"><img src="/static/img/special/special1.jpg" alt=""> </a> </li>
+                    <li class="smallimg"><a href="#"><img src="/static/img/special/special2.jpg" alt=""> </a> </li>
+                    <li class="smallimg"><a href="#"><img src="/static/img/special/spe1.jpg" alt=""> </a> </li>
+                    <li class="smallimg"><a href="#"><img src="/static/img/special/spe2.jpg" alt=""> </a> </li>
+                    <li class="smallimg"><a href="#"><img src="/static/img/special/spe1.jpg" alt=""> </a> </li>
+                    <li class="smallimg"><a href="#"><img src="/static/img/special/special3.jpg" alt=""> </a> </li>
+                    <li class="smallimg"><a href="#"><img src="/static/img/special/spe3.jpg" alt=""> </a> </li>
+                    <li class="smallimg"><a href="#"><img src="/static/img/special/spe4.jpg" alt=""> </a> </li>
+                    <li class="smallimg"><a href="#"><img src="/static/img/special/spe3.jpg" alt=""> </a> </li>
+                </ul>
+            </div>
+
+            {% for floor in floors %}
+                <div class="selection_title">
+                    <h{{ floor }}></h>
+                    <p class="phoneSta" style="font-size: 16px;">
+                        <a href="#">华为</a>
+                        <a href="#">苹果</a>
+                        <a href="#">三星</a>
+                        <a href="#">魅族</a>
+                        <a href="#">oppo</a>
+                        <a href="#">小米</a>
+                    </p>
+                </div>
+                <div class="secondfloor">
+                    <div class="main_sell">
+                    </div>
+                    <ul class="figure_list">
+                        <li class="main_list">
+                            <a href="#">
+                                {% if forloop.counter == 1 %}
+                                    <ul class="smalllun"></ul>
+                                    <ul class="bar1"></ul>
+                                {% else %}
+                                    <img style="width: 419px;height: 208px" src="/static/img/1f/lun.jpg" alt="" />
+                                {% endif %}
+                            </a>
+                        </li>
+                        <li class="listtall"></li>
+                        <li class="listtall"></li>
+                        <li class="listshort"></li>
+                        <li class="listshort"></li>
+                        <li class="listshort"></li>
+                        <li class="listshort"></li>
+                    </ul>
+                    <ul class="logototal">
+                        <li>
+                            <a href="#"><img src="/static/img/1f/apple.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="/static/img/1f/huawei.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="/static/img/1f/leshi.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="/static/img/1f/oppo.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="/static/img/1f/vivo.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="/static/img/1f/coolpad.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="/static/img/1f/meizu.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="/static/img/1f/sony.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="/static/img/1f/sumsung.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="/static/img/1f/lenovo.jpg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            {% endfor %}
+
+
+{#            <!--1f-->#}
+{#            <div class="selection_title">#}
+{#                <h3></h3>#}
+{#                <p class="phoneSta">#}
+{#                    <a href="#">华为</a>#}
+{#                    <a href="#">苹果</a>#}
+{#                    <a href="#">三星</a>#}
+{#                    <a href="#">魅族</a>#}
+{#                    <a href="#">oppo</a>#}
+{#                    <a href="#">小米</a>#}
+{#                </p>#}
+{#            </div>#}
+{#            <div class="secondfloor">#}
+{#                <div class="main_sell">#}
+{#                </div>#}
+{#                <ul class="figure_list">#}
+{#                    <li class="main_list">#}
+{#                        <a href="#">#}
+{#                            <ul class="smalllun"></ul>#}
+{#                            <ul class="bar1"></ul>#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="listtall"></li>#}
+{#                    <li class="listtall"></li>#}
+{#                    <li class="listshort"></li>#}
+{#                    <li class="listshort"></li>#}
+{#                    <li class="listshort"></li>#}
+{#                    <li class="listshort"></li>#}
+{#                </ul>#}
+{#                <ul class="logototal">#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/apple.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/huawei.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/leshi.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/oppo.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/vivo.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/coolpad.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/meizu.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/sony.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/sumsung.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/lenovo.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </div>#}
+{##}
+{#            <!--2f-->#}
+{#            <div class="selection_title">#}
+{#                <h4></h4>#}
+{#                <p class="phoneSta">#}
+{#                    <a href="#">二合一电脑</a>#}
+{#                    <a href="#">商务本</a>#}
+{#                    <a href="#">游戏本</a>#}
+{#                    <a href="#">iPad</a>#}
+{#                    <a href="#">联想小Y</a>#}
+{#                    <a href="#">尼康D750</a>#}
+{#                    <a href="#">佳能70D</a>#}
+{#                </p>#}
+{#            </div>#}
+{#            <div class="secondfloor">#}
+{#                 <div class="main_sell">#}
+{#                <a href="#">#}
+{#                    <img src="/static/img/2f/mainsell.jpg" alt="">#}
+{#                </a>#}
+{#            </div>#}
+{#                <ul class="figure_list">#}
+{#                    <li class="main_list">#}
+{#                        <a href="#"><img style="width: 419px;height: 208px" src="/static/img/1f/lun.jpg" alt=""> </a>#}
+{#                    </li>#}
+{#                    <li class="listtall">#}
+{#                        <div>#}
+{#                            <a href="#">魅族MX6(全网通)</a>#}
+{#                        </div>#}
+{#                        <p>PADE相位对焦，快速充</p>#}
+{#                        <a href="#"><img src="/static/img/2f/6.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li class="listtall">#}
+{#                        <div>#}
+{#                            <a href="#">三星新品C5</a>#}
+{#                        </div>#}
+{#                            <p>骁龙八核 更有惊艳粉色</p>#}
+{#                            <a href="#"><img src="/static/img/2f/4.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li class="listshort">#}
+{#                        <div>#}
+{#                            <a href="#">魅蓝Note3(全网通)</a>#}
+{#                        </div>#}
+{#                        <p>金属机身 指纹解锁</p>#}
+{#                        <a href="#"><img src="/static/img/2f/2.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li class="listshort">#}
+{#                        <div>#}
+{#                            <a href="#">荣耀 8 全网通</a>#}
+{#                        </div>#}
+{#                        <p>好手感 令人无法拒绝</p>#}
+{#                        <a href="#"><img src="/static/img/2f/5.jpg" alt="" style="top: 75px;"></a>#}
+{#                    </li>#}
+{#                    <li class="listshort">#}
+{#                        <div>#}
+{#                            <a href="#">苹果的iPhone 6S Plus</a>#}
+{#                        </div>#}
+{#                        <p>唯一的不同,处处都相同</p>#}
+{#                        <a href="#"><img src="/static/img/2f/3.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li class="listshort">#}
+{#                        <div>#}
+{#                            <a href="#">vivo X7 Plus</a>#}
+{#                        </div>#}
+{#                        <p>赠豪华大礼包</p>#}
+{#                        <a href="#"><img src="/static/img/2f/1.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#                <ul class="logototal">#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/apple.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/huawei.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/leshi.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/oppo.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/vivo.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/coolpad.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/meizu.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/sony.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/sumsung.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/lenovo.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </div>#}
+{##}
+{#            <!--3f-->#}
+{#            <div class="selection_title">#}
+{#                <h5></h5>#}
+{#                <p class="phoneSta">#}
+{#                    <a href="#">数码相机</a>#}
+{#                    <a href="#">智能手环</a>#}
+{#                    <a href="#">游戏机</a>#}
+{#                    <a href="#">移动电源</a>#}
+{#                    <a href="#">平板电视</a>#}
+{#                    <a href="#">煮蛋器</a>#}
+{#                </p>#}
+{#            </div>#}
+{#            <div class="secondfloor">#}
+{#                 <div class="main_sell">#}
+{#                <a href="#">#}
+{#                    <img src="/static/img/3f/mainsell.jpg" alt="">#}
+{#                </a>#}
+{#            </div>#}
+{#                <ul class="figure_list">#}
+{#                    <li class="main_list">#}
+{#                        <a href="#"><img style="width: 419px;height: 208px" src="/static/img/1f/lun.jpg" alt=""> </a>#}
+{#                    </li>#}
+{#                    <li class="listtall">#}
+{#                        <div>#}
+{#                            <a href="#">魅族MX6(全网通)</a>#}
+{#                        </div>#}
+{#                        <p>PADE相位对焦，快速充</p>#}
+{#                        <a href="#"><img src="/static/img/3f/6.png" alt="" style="top: 75px;"></a>#}
+{#                    </li>#}
+{#                    <li class="listtall">#}
+{#                        <div>#}
+{#                            <a href="#">三星新品C5</a>#}
+{#                        </div>#}
+{#                            <p>骁龙八核 更有惊艳粉色</p>#}
+{#                            <a href="#"><img src="/static/img/3f/4.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li class="listshort">#}
+{#                        <div>#}
+{#                            <a href="#">魅蓝Note3(全网通)</a>#}
+{#                        </div>#}
+{#                        <p>金属机身 指纹解锁</p>#}
+{#                        <a href="#"><img src="/static/img/3f/2.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li class="listshort">#}
+{#                        <div>#}
+{#                            <a href="#">荣耀 8 全网通</a>#}
+{#                        </div>#}
+{#                        <p>好手感 令人无法拒绝</p>#}
+{#                        <a href="#"><img src="/static/img/3f/5.png" alt="" style="top: 75px;"></a>#}
+{#                    </li>#}
+{#                    <li class="listshort">#}
+{#                        <div>#}
+{#                            <a href="#">苹果的iPhone 6S Plus</a>#}
+{#                        </div>#}
+{#                        <p>唯一的不同,处处都相同</p>#}
+{#                        <a href="#"><img src="/static/img/3f/3.jpg" alt="" style="top: 75px;"></a>#}
+{#                    </li>#}
+{#                    <li class="listshort">#}
+{#                        <div>#}
+{#                            <a href="#">vivo X7 Plus</a>#}
+{#                        </div>#}
+{#                        <p>赠豪华大礼包</p>#}
+{#                        <a href="#"><img src="/static/img/3f/1.png" alt=""></a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#                <ul class="logototal">#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/apple.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/huawei.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/leshi.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/oppo.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/vivo.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/coolpad.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/meizu.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/sony.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/sumsung.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/lenovo.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </div>#}
+{##}
+{#            <!--4f-->#}
+{#            <div class="selection_title">#}
+{#                <h6></h6>#}
+{#                <p class="phoneSta">#}
+{#                    <a href="#">内存</a>#}
+{#                    <a href="#">技嘉</a>#}
+{#                    <a href="#">机械键盘</a>#}
+{#                    <a href="#">发烧级显卡</a>#}
+{#                    <a href="#">华硕主板</a>#}
+{#                    <a href="#">DIY主机</a>#}
+{#                </p>#}
+{#            </div>#}
+{#            <div class="secondfloor">#}
+{#                 <div class="main_sell">#}
+{#                <a href="#">#}
+{#                    <img src="/static/img/4f/mainsell.jpg" alt="">#}
+{#                </a>#}
+{#            </div>#}
+{#                <ul class="figure_list">#}
+{#                    <li class="main_list">#}
+{#                        <a href="#"><img style="width: 419px;height: 208px" src="/static/img/1f/lun.jpg" alt=""> </a>#}
+{#                    </li>#}
+{#                    <li class="listtall">#}
+{#                        <div>#}
+{#                            <a href="#">魅族MX6(全网通)</a>#}
+{#                        </div>#}
+{#                        <p>PADE相位对焦，快速充</p>#}
+{#                        <a href="#"><img src="/static/img/4f/6.jpg" alt="" style="top: 75px;"></a>#}
+{#                    </li>#}
+{#                    <li class="listtall">#}
+{#                        <div>#}
+{#                            <a href="#">三星新品C5</a>#}
+{#                        </div>#}
+{#                            <p>骁龙八核 更有惊艳粉色</p>#}
+{#                            <a href="#"><img src="/static/img/4f/4.png" alt=""></a>#}
+{#                    </li>#}
+{#                    <li class="listshort">#}
+{#                        <div>#}
+{#                            <a href="#">魅蓝Note3(全网通)</a>#}
+{#                        </div>#}
+{#                        <p>金属机身 指纹解锁</p>#}
+{#                        <a href="#"><img src="/static/img/4f/2.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li class="listshort">#}
+{#                        <div>#}
+{#                            <a href="#">荣耀 8 全网通</a>#}
+{#                        </div>#}
+{#                        <p>好手感 令人无法拒绝</p>#}
+{#                        <a href="#"><img src="/static/img/4f/5.jpg" alt="" style="top: 75px;"></a>#}
+{#                    </li>#}
+{#                    <li class="listshort">#}
+{#                        <div>#}
+{#                            <a href="#">苹果的iPhone 6S Plus</a>#}
+{#                        </div>#}
+{#                        <p>唯一的不同,处处都相同</p>#}
+{#                        <a href="#"><img src="/static/img/4f/3.png" alt="" style="top: 75px;"></a>#}
+{#                    </li>#}
+{#                    <li class="listshort">#}
+{#                        <div>#}
+{#                            <a href="#">vivo X7 Plus</a>#}
+{#                        </div>#}
+{#                        <p>赠豪华大礼包</p>#}
+{#                        <a href="#"><img src="/static/img/4f/1.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#                <ul class="logototal">#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/apple.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/huawei.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/leshi.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/oppo.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/vivo.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/coolpad.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/meizu.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/sony.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/sumsung.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="/static/img/1f/lenovo.jpg" alt=""></a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </div>#}
+
+            <div class="oneMoney">
+
+                <h6></h6>
+                <ul>
+                    <li>
+                        <div class="phoneScancode">
+                                <i></i>
+                                <img src="/static/img/one/shop_wechat.png" alt="">
+                        </div>
+                        <div class="oneMoney_box">
+                            <img src="/static/img/one/1.jpg" alt="">
+                            <p>
+                                距揭晓还需650人次
+                            </p>
+                        </div>
+                        <h4>豹米负离子车载空气净化器</h4>
+                    </li>
+                    <li>
+                        <div class="phoneScancode">
+                                <i></i>
+                                <img src="/static/img/one/shop_wechat.png" alt="">
+                        </div>
+                        <div class="oneMoney_box">
+                            <img src="/static/img/one/2.jpg" alt="">
+                            <p>距揭晓还需199人次</p>
+                        </div>
+                        <h4>狼蛛龙源三色背光键盘</h4>
+                    </li>
+                    <li>
+                        <div class="phoneScancode">
+                                <i></i>
+                                <img src="/static/img/one/shop_wechat.png" alt="">
+                        </div>
+                        <div class="oneMoney_box">
+                            <img src="/static/img/one/3.jpg" alt="">
+                            <p>距揭晓还需324人次</p>
+                        </div>
+                        <h4>雷柏V500机械游戏键盘</h4>
+                    </li>
+                    <li>
+                        <div class="phoneScancode">
+                                <i></i>
+                                <img src="/static/img/one/shop_wechat.png" alt="">
+                        </div>
+                        <div class="oneMoney_box">
+                            <img src="/static/img/one/4.jpg" alt="">
+                            <p>距揭晓还需5187人次</p>
+                        </div>
+                        <h4>苹果iphone 7 plus</h4>
+                    </li>
+                    <li>
+                        <div class="phoneScancode" style="display: none;">
+                                <i></i>
+                                <img src="/static/img/one/shop_wechat.png" alt="">
+                        </div>
+                        <div class="oneMoney_box">
+                            <img src="/static/img/one/5.jpg" alt="">
+                            <p style="">距揭晓还需280人次</p>
+                        </div>
+                        <h4>Lindero Lind-X6蓝牙耳机</h4>
+                    </li>
+                    <li>
+                        <div class="phoneScancode">
+                                <i></i>
+                                <img src="/static/img/one/shop_wechat.png" alt="">
+                        </div>
+                        <div class="oneMoney_box">
+                            <img src="/static/img/one/6.jpg" alt="">
+                            <p>距揭晓还需4761人次</p>
+                        </div>
+                        <h4>苹果 iphone 7</h4>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+
+{#首页底部#}
+{% block footer %}
+    <div id="footer">
+        <div class="footer_body">
+            <ul class="footer_service">
+                <li>
+                    <a href="#">行货保证</a>
+                    <i><img src="/static/img/cun.jpg" alt=""> </i>
+                </li>
+                <li>
+                    <a href="#">发票保证</a>
+                    <i><img src="/static/img/piao.jpg" alt=""> </i>
+                </li>
+                <li>
+                    <a href="#">顺丰包邮</a>
+                    <i><img src="/static/img/sf.jpg" alt=""> </i>
+                </li>
+                <li>
+                    <a href="#">无忧退换</a>
+                    <i><img src="/static/img/return.jpg" alt=""> </i>
+                </li>
+                <li>
+                    <a href="#">先行赔付</a>
+                    <i><img src="/static/img/pei.jpg" alt=""> </i>
+                </li>
+            </ul>
+            <div class="footer_servic_relate">
+                <dl>
+                    <dt>购物指南</dt>
+                    <dd>
+                        <p><a href="#">账号注册</a> </p>
+                        <p><a href="#">购物流程</a> </p>
+                        <p><a href="#">付款方式</a> </p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>售后服务</dt>
+                    <dd>
+                        <p><a href="#">先行赔付</a> </p>
+                        <p><a href="#">退款退货流程</a> </p>
+                        <p><a href="#">投诉举报</a> </p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>商城保障</dt>
+                    <dd>
+                        <p><a href="#">行货保障</a> </p>
+                        <p><a href="#">如实描述</a> </p>
+                        <p><a href="#">物流配送</a> </p>
+                        <p><a href="#">48小时发货</a> </p>
+                        <p><a href="#">发票保障</a> </p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>商家服务</dt>
+                    <dd>
+                        <p><a href="#">商家中心</a> </p>
+                        <p><a href="#">商城规则</a> </p>
+                        <p><a href="#">商家帮助</a> </p>
+                    </dd>
+                </dl>
+                <dl class="hotline">
+                    <dt>400-678-0068</dt>
+                    <dd>
+                        <p>工作日 9:00 - 18:00</p>
+                        <a href="#">关注新浪微博</a>
+                    </dd>
+                </dl>
+                <dl class="cooperation">
+                    <dt>商家合作</dt>
+                    <dd>
+                        <p>错过天猫？别再错过我们！</p>
+                        <p>ZOL商城开启全新旅程！</p>
+                        <a class="btn" href="#">
+                            <span>关于入驻&gt;</span>
+                        </a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div id="fr_link">
+        <div class="wrapper">
+            <div class="parter">
+                <span>合作伙伴:</span>
+                <p>
+                    <a href="#">电子商务平台</a>
+                    <a href="#">卷皮网</a>
+                    <a href="#">华为商城</a>
+                    <a href="#">中国电子银行</a>
+                    <a href="#">三帝贸易网</a>
+                    <a href="#">网购</a>
+                    <a href="#">eNet商城</a>
+                    <a href="#">家具网</a>
+                    <a href="#">易趣</a>
+                    <a href="#">手表品牌大全</a>
+                    <a href="#">钻石</a>
+                    <a href="#">伊秀女性网</a>
+                    <a href="#">电子产品世界</a>
+                    <a href="#">广告网</a>
+                    <a href="#">易购网</a>
+                    <a href="#">华强电子网</a>
+                    <a href="#">挖东西比价网</a>
+                </p>
+            </div>
+            <div class="footer-nav">
+                <p>
+                    <a href="#">中关村在线</a>
+                    <a href="#">ZOL商城</a>
+                    <a href="#">团购</a>
+                    <a href="#">限时抢购</a>
+                    <a href="#">经销商</a>
+                    <a href="#">产品报价</a>
+                    <a href="#">论坛</a>
+                    <a href="#">问答</a>
+                </p>
+            </div>
+            <div class="copyright">
+                <p>
+                    <a href="#">关于ZOL商城</a>
+                    <a href="#">帮助中心</a>
+                    <a href="#">联系我们</a>
+                    <a href="#">发展历程</a>
+                    <a href="#">媒体报道</a>
+                </p>
+            </div>
+            <div class="copyright">
+                <p>
+                    &nbsp;&nbsp;&nbsp;©2016中关村在线 版权所有.
+                    <a href="#">京ICP证150096号</a>
+                    京ICP备14061128号
+                    <a href="#">京公网安备11010802020026</a>
+                    <a href="#">网络文化经营许可证京网文[2016]1631-199</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+

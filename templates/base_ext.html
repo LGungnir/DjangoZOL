@@ -1,0 +1,689 @@
+
+{#------------------此页面适用于首页、商品列表、商品详情------------------------#}
+
+{% extends 'base_main.html' %}
+{% load static %}
+
+{#搜索栏#}
+{% block search %}
+    <div class="search-box">
+        <div class="search">
+            <form action="{% url 'ZOL:goodlist' %}" method="post">
+                {% csrf_token %}
+                {% if key_word != '0' %}
+                    <input class="text" type="text" name="key_word" value="{{ key_word }}">
+                {% else %}
+                    <input class="text" type="text" name="key_word" value="">
+                {% endif %}
+                <input class="kw_search button" type="submit" value="搜索">
+            </form>
+        </div>
+        <div class="hot-search">
+            <a href="#">三星s7 Edhe</a>
+            <a href="#">华为P9</a>
+            <a href="#">华硕飞行堡垒</a>
+            <a href="#">GTX1060</a>
+            <a href="#">九阳豆浆机直降100！</a>
+            <a href="#">热销机械键盘</a>
+        </div>
+    </div>
+    <div class="ad-div">
+        <a href="#"><img src="/static/img/promise.jpg" alt=""></a>
+    </div>
+{% endblock %}
+
+
+{#导航第一排#}
+{% block nav %}
+    <div id="nav">
+        <div class="nav_box">
+            <div class="category_nav">
+                <h2>商品分类</h2>
+{#                其中商品列表与商品详情页面为display:None;#}
+{#                <div class="menu_nav_container" style="display: none;">#}
+                <div class="menu_nav_container">
+                    <ul>
+                        <li class="menu_nav_containerli">
+                            <div class="menu_nav_containerfirst">
+                                <a href="#">手机通讯/</a>
+                                <a href="#">手机配件</a>
+                            </div>
+                            <div class="service">
+                                <div class="serviceheader">
+                                    <span>服务保障</span>
+                                    <ul>
+                                        <li><a href="#"><i><img src="img/sort/xin.png" alt=""></i>行货保证</a></li>
+                                        <li><a href="#"><i><img src="img/sort/piao.png" alt=""></i>发票保障</a></li>
+                                        <li><a href="#"><i><img src="img/sort/sf.png" alt=""></i>顺丰包邮</a></li>
+                                        <li><a href="#"><i><img src="img/sort/tuihuan.png" alt=""></i>无忧退换</a></li>
+                                        <li><a href="#"><i><img src="img/sort/pei.png" alt=""></i>先行赔付</a></li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>手机通讯</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="{% url 'ZOL:goodlist' %}">手机</a>
+                                                <a href="#">老人机</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">华为</a>
+                                                <a href="#">苹果</a>
+                                                <a href="#">三星</a>
+                                                <a href="#">魅族</a>
+                                                <a href="#">oppo</a>
+                                                <a href="#">小米</a>
+                                                <a href="#">HTC</a>
+                                                <a href="#">乐视</a>
+                                                <a href="#">vivo</a>
+                                                <a href="#">SONY</a>
+                                                <a href="#">飞利浦</a>
+                                                <a href="#">nubia</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">诺基亚</a>
+                                                <a href="#">摩托罗拉</a>
+                                                <a href="#">中兴</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>手机配件</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">保护膜</a>
+                                                <a href="#">充电线</a>
+                                                <a href="#">数据线</a>
+                                                <a href="#">手机电池</a>
+                                                <a href="#">手机贴膜</a>
+                                                <a href="#">手机构件</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>移动设备</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">POS机</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu_nav_containerli">
+                            <div class="menu_nav_containerfirst">
+                                <a href="#">笔记本/</a>
+                                <a href="#">平板/</a>
+                                <a href="#">品牌整机</a>
+                            </div>
+                            <div class="service">
+                                <div class="serviceheader">
+                                    <span>服务保障</span>
+                                    <ul>
+                                        <li><a href="#"><i><img src="img/sort/xin.png" alt=""></i>行货保证</a></li>
+                                        <li><a href="#"><i><img src="img/sort/piao.png" alt=""></i>发票保障</a></li>
+                                        <li><a href="#"><i><img src="img/sort/sf.png" alt=""></i>顺丰包邮</a></li>
+                                        <li><a href="#"><i><img src="img/sort/tuihuan.png" alt=""></i>无忧退换</a></li>
+                                        <li><a href="#"><i><img src="img/sort/pei.png" alt=""></i>先行赔付</a></li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>笔记本</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">游戏本</a>
+                                                <a href="#">商务本</a>
+                                                <a href="#">超薄本</a>
+                                                <a href="#">影音娱乐本</a>
+                                                <a href="#">校园学生本</a>
+                                                <a href="#">飞行堡垒</a>
+                                                <a href="#">戴尔灵越</a>
+                                                <a href="#">联想小Y</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">15英寸大屏</a>
+                                                <a href="#">酷睿i7</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">联想</a>
+                                                <a href="#">华硕</a>
+                                                <a href="#">戴尔</a>
+                                                <a href="#">ThinkPad</a>
+                                                <a href="#">苹果</a>
+                                                <a href="#">惠普</a>
+                                                <a href="#">神舟</a>
+                                                <a href="#">宏暮</a>
+                                                <a href="#">Alienware</a>
+                                                <a href="#">MSI微星</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>平板</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">微软</a>
+                                                <a href="#">安卓</a>
+                                                <a href="#">苹果IOS</a>
+                                                <a href="#">10.1英寸</a>
+                                                <a href="#">娱乐平板</a>
+                                                <a href="#">商务平板</a>
+                                                <a href="#">2合1平板电脑</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">苹果</a>
+                                                <a href="#">三星</a>
+                                                <a href="#">联想</a>
+                                                <a href="#">小米</a>
+                                                <a href="#">华为</a>
+                                                <a href="#">台电</a>
+                                                <a href="#">华硕</a>
+                                                <a href="#">微软</a>
+                                                <a href="#">荣耀</a>
+                                                <a href="#">Thinkpad</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>品牌整机</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">一体机</a>
+                                                <a href="#">商用电脑</a>
+                                                <a href="#">家用电脑</a>
+                                                <a href="#">时尚电脑</a>
+                                                <a href="#">游戏电脑</a>
+                                                <a href="#">酷睿i7</a>
+                                                <a href="#">发烧级独立显卡</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">联想</a>
+                                                <a href="#">戴尔</a>
+                                                <a href="#">华硕</a>
+                                                <a href="#">惠普</a>
+                                                <a href="#">联想ThinkCentre</a>
+                                                <a href="#">Acer宏暮</a>
+                                                <a href="#">神舟</a>
+                                                <a href="#">Alienware</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu_nav_containerli">
+                            <div class="menu_nav_containerfirst">
+                                <a href="#">摄影摄像/</a>
+                                <a href="#">数码配件</a>
+                            </div>
+                            <div class="service">
+                                <div class="serviceheader">
+                                    <span>服务保障</span>
+                                    <ul>
+                                        <li><a href="#"><i><img src="img/sort/xin.png" alt=""></i>行货保证</a></li>
+                                        <li><a href="#"><i><img src="img/sort/piao.png" alt=""></i>发票保障</a></li>
+                                        <li><a href="#"><i><img src="img/sort/sf.png" alt=""></i>顺丰包邮</a></li>
+                                        <li><a href="#"><i><img src="img/sort/tuihuan.png" alt=""></i>无忧退换</a></li>
+                                        <li><a href="#"><i><img src="img/sort/pei.png" alt=""></i>先行赔付</a></li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>摄影摄像</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">数码相机</a>
+                                                <a href="#">单反相机</a>
+                                                <a href="#">运动相机</a>
+                                                <a href="#">摄影机</a>
+                                                <a href="#">镜头</a>
+                                                <a href="#">户外器材</a>
+                                                <a href="#">影棚器材</a>
+                                                <a href="#">数码相框</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">佳能</a>
+                                                <a href="#">索尼</a>
+                                                <a href="#">尼康</a>
+                                                <a href="#">三星</a>
+                                                <a href="#">卡西欧</a>
+                                                <a href="#">奥林巴斯</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>数码配件</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">三脚架/云台</a>
+                                                <a href="#">闪光配件</a>
+                                                <a href="#">单反手柄</a>
+                                                <a href="#">机身附件</a>
+                                                <a href="#">镜头附件</a>
+                                                <a href="#">存储卡</a>
+                                                <a href="#">闪光灯</a>
+                                                <a href="#">相机包</a>
+                                                <a href="#">充电器</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu_nav_containerli">
+                            <div class="menu_nav_containerfirst">
+                                <a href="#">游戏电玩/</a>
+                                <a href="#">游戏本</a>
+                            </div>
+                            <div class="service">
+                                <div class="serviceheader">
+                                    <span>服务保障</span>
+                                    <ul>
+                                        <li><a href="#"><i><img src="img/sort/xin.png" alt=""></i>行货保证</a></li>
+                                        <li><a href="#"><i><img src="img/sort/piao.png" alt=""></i>发票保障</a></li>
+                                        <li><a href="#"><i><img src="img/sort/sf.png" alt=""></i>顺丰包邮</a></li>
+                                        <li><a href="#"><i><img src="img/sort/tuihuan.png" alt=""></i>无忧退换</a></li>
+                                        <li><a href="#"><i><img src="img/sort/pei.png" alt=""></i>先行赔付</a></li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>游戏电玩</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">体感游戏机</a>
+                                                <a href="#">PlayStation 4</a>
+                                                <a href="#">Xbox One</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">索尼</a>
+                                                <a href="#">微软</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>游戏本</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">玩家国度</a>
+                                                <a href="#">战神</a>
+                                                <a href="#">Alienware</a>
+                                                <a href="#">雷蛇</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu_nav_containerli">
+                            <div class="menu_nav_containerfirst">
+                                <a href="#">DIY硬件/</a>
+                                <a href="#">外设配件</a>
+                            </div>
+                            <div class="service">
+                                <div class="serviceheader">
+                                    <span>服务保障</span>
+                                    <ul>
+                                        <li><a href="#"><i><img src="img/sort/xin.png" alt=""></i>行货保证</a></li>
+                                        <li><a href="#"><i><img src="img/sort/piao.png" alt=""></i>发票保障</a></li>
+                                        <li><a href="#"><i><img src="img/sort/sf.png" alt=""></i>顺丰包邮</a></li>
+                                        <li><a href="#"><i><img src="img/sort/tuihuan.png" alt=""></i>无忧退换</a></li>
+                                        <li><a href="#"><i><img src="img/sort/pei.png" alt=""></i>先行赔付</a></li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>DIY硬件</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">DIY主机</a>
+                                                <a href="#">显卡</a>
+                                                <a href="#">主板</a>
+                                                <a href="#">固态硬盘</a>
+                                                <a href="#">散热器</a>
+                                                <a href="#">硬盘</a>
+                                                <a href="#">内存</a>
+                                                <a href="#">机箱</a>
+                                                <a href="#">CPU</a>
+                                                <a href="#">电源</a>
+                                                <a href="#">光驱</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">华硕</a>
+                                                <a href="#">技嘉</a>
+                                                <a href="#">MSI微星</a>
+                                                <a href="#">三星</a>
+                                                <a href="#">联想</a>
+                                                <a href="#">浦科特</a>
+                                                <a href="#">金士顿</a>
+                                                <a href="#">威刚</a>
+                                                <a href="#">Intel</a>
+                                                <a href="#">九州风神</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">ID-COOLING</a>
+                                                <a href="#">先马</a>
+                                                <a href="#">Tt</a>
+                                                <a href="#">西部数据</a>
+                                                <a href="#">希捷</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>外设配件</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">耳机</a>
+                                                <a href="#">音箱</a>
+                                                <a href="#">U盘</a>
+                                                <a href="#">摄像头</a>
+                                                <a href="#">鼠标垫</a>
+                                                <a href="#">键盘</a>
+                                                <a href="#">鼠标</a>
+                                                <a href="#">移动硬盘</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">惠普</a>
+                                                <a href="#">达尔优</a>
+                                                <a href="#">摩豹</a>
+                                                <a href="#">PNY</a>
+                                                <a href="#">雷蛇</a>
+                                                <a href="#">赛睿</a>
+                                                <a href="#">罗技</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>网络设备</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">路由器</a>
+                                                <a href="#">网络存储</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">B-link</a>
+                                                <a href="#">西部数据</a>
+                                                <a href="#">巴法络</a>
+                                                <a href="#">群晖</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu_nav_containerli">
+                            <div class="menu_nav_containerfirst">
+                                <a href="#">智能生活/</a>
+                                <a href="#">智能设备</a>
+                            </div>
+                            <div class="service">
+                                <div class="serviceheader">
+                                    <span>服务保障</span>
+                                    <ul>
+                                        <li><a href="#"><i><img src="img/sort/xin.png" alt=""></i>行货保证</a></li>
+                                        <li><a href="#"><i><img src="img/sort/piao.png" alt=""></i>发票保障</a></li>
+                                        <li><a href="#"><i><img src="img/sort/sf.png" alt=""></i>顺丰包邮</a></li>
+                                        <li><a href="#"><i><img src="img/sort/tuihuan.png" alt=""></i>无忧退换</a></li>
+                                        <li><a href="#"><i><img src="img/sort/pei.png" alt=""></i>先行赔付</a></li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>智能生活</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">智能秤</a>
+                                                <a href="#">智能家居</a>
+                                                <a href="#">智能穿戴</a>
+                                                <a href="#">智能手表</a>
+                                                <a href="#">智能手环</a>
+                                                <a href="#">智能插座</a>
+                                                <a href="#">智能创意</a>
+                                                <a href="#">智能电子</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">智能机器人</a>
+                                                <a href="#">智能摄像机</a>
+                                                <a href="#">智能头戴设备</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">HTC</a>
+                                                <a href="#">乐心</a>
+                                                <a href="#">华为</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>智能设备</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">MP3</a>
+                                                <a href="#">录音笔</a>
+                                                <a href="#">摄像头</a>
+                                                <a href="#">移动电源</a>
+                                                <a href="#">蓝牙音箱</a>
+                                                <a href="#">插座/插排</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">品胜</a>
+                                                <a href="#">羽博</a>
+                                                <a href="#">小米</a>
+                                                <a href="#">索尼</a>
+                                                <a href="#">飞利浦</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>智能投影</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">投影机吊架</a>
+                                                <a href="#">3D眼睛</a>
+                                                <a href="#">投影幕布</a>
+                                                <a href="#">投影机</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">B-link</a>
+                                                <a href="#">西部数据</a>
+                                                <a href="#">巴法络</a>
+                                                <a href="#">群晖</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu_nav_containerli">
+                            <div class="menu_nav_containerfirst">
+                                <a href="#">家用设备/</a>
+                                <a href="#">办公设备</a>
+                            </div>
+                            <div class="service">
+                                <div class="serviceheader">
+                                    <span>服务保障</span>
+                                    <ul>
+                                        <li><a href="#"><i><img src="img/sort/xin.png" alt=""></i>行货保证</a></li>
+                                        <li><a href="#"><i><img src="img/sort/piao.png" alt=""></i>发票保障</a></li>
+                                        <li><a href="#"><i><img src="img/sort/sf.png" alt=""></i>顺丰包邮</a></li>
+                                        <li><a href="#"><i><img src="img/sort/tuihuan.png" alt=""></i>无忧退换</a></li>
+                                        <li><a href="#"><i><img src="img/sort/pei.png" alt=""></i>先行赔付</a></li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>家用设备</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">手柄</a>
+                                                <a href="#">游戏机</a>
+                                                <a href="#">掌上游戏机</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>办公设备</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">投影幕布</a>
+                                                <a href="#">POS机</a>
+                                                <a href="#">投影仪</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">拉卡拉</a>
+                                                <a href="#">极米</a>
+                                                <a href="#">坚果</a>
+                                                <a href="#">飞利浦</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu_nav_containerli">
+                            <div class="menu_nav_containerfirst">
+                                <a href="#">生活电器/</a>
+                                <a href="#">个护/</a>
+                                <a href="#">家用电器</a>
+                            </div>
+                            <div class="service">
+                                <div class="serviceheader">
+                                    <span>服务保障</span>
+                                    <ul>
+                                        <li><a href="#"><i><img src="img/sort/xin.png" alt=""></i>行货保证</a></li>
+                                        <li><a href="#"><i><img src="img/sort/piao.png" alt=""></i>发票保障</a></li>
+                                        <li><a href="#"><i><img src="img/sort/sf.png" alt=""></i>顺丰包邮</a></li>
+                                        <li><a href="#"><i><img src="img/sort/tuihuan.png" alt=""></i>无忧退换</a></li>
+                                        <li><a href="#"><i><img src="img/sort/pei.png" alt=""></i>先行赔付</a></li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>生活电器</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">加湿器</a>
+                                                <a href="#">电暖气</a>
+                                                <a href="#">收音机</a>
+                                                <a href="#">吸尘器</a>
+                                                <a href="#">护眼灯</a>
+                                                <a href="#">小工具</a>
+                                                <a href="#">驱蚊防蚊</a>
+                                                <a href="#">扫地机器人</a>
+                                                <a href="#">空气净化器</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>个护</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">洁面仪</a>
+                                                <a href="#">剃须刀</a>
+                                                <a href="#">电吹风</a>
+                                                <a href="#">电子秤</a>
+                                                <a href="#">按摩器</a>
+                                                <a href="#">血压计</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="servicecontent">
+                                    <span>家用电器</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <a href="#">平板电视</a>
+                                                <a href="#">迷你音响</a>
+                                                <a href="#">电视盒子</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">烤箱</a>
+                                                <a href="#">电水壶</a>
+                                                <a href="#">蒸蛋器</a>
+                                                <a href="#">酸奶机</a>
+                                                <a href="#">电火锅</a>
+                                                <a href="#">咖啡机</a>
+                                                <a href="#">豆浆机</a>
+                                                <a href="#">电饭煲</a>
+                                                <a href="#">多士炉</a>
+                                            </p>
+                                            <p>
+                                                <a href="#">料理/榨汁机</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="nav_list">
+                <li><a href="{% url 'ZOL:index' %}">首页</a> </li>
+                <li><a href="#">团购</a> </li>
+                <li><a href="#">手机馆</a> </li>
+                <li><a href="#">智能之家</a> </li>
+                <li><a href="#">DIY攒机馆</a> </li>
+                <li><a href="#">限时抢购</a> </li>
+            </ul>
+            <div class="nav_tips">
+                <a href="#">iPhone7来啦！限量预约 官网同步发货</a>
+            </div>
+
+{#            存放导航轮播图#}
+            {% block nav_else %}
+            {% endblock %}
+        </div>
+{#        存放商品筛选列表#}
+        {% block nav_content %}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+
+{#右侧黑色导航栏#}
+{% block toolbar %}
+    <div id="toolbar">
+        <ul class="ico">
+            <li><img src="/static/img/toolbar/order.png" alt="">
+                <span><a href="#">我的订单</a></span>
+            </li>
+            <li><img src="/static/img/toolbar/foot.png" alt="">
+                <span><a href="#">我的足迹</a></span></li>
+            <li><img src="/static/img/toolbar/shoppingcar.png" alt="">
+                <span><a href="{% url 'ZOL:cart' %}">购物车</a></span></li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block redcat %}
+    <a id="research" href="#"><img src="/static/img/research_ico.png" alt=""></a>
+{% endblock %}
+

@@ -1,0 +1,19 @@
+{
+	"left": "../img/product/six/1.jpg",
+	"center":
+		{
+			"top":
+			[
+				{"img":"../img/product/six/2.jpg"},
+				{"img":"../img/product/six/3.jpg"}
+			],
+
+          "bottom":
+          [
+            {"img":"../img/product/six/4.jpg"},
+            {"img":"../img/product/six/5.jpg"},
+            {"img":"../img/product/six/6.jpg"}
+          ]
+		},
+	"right": "../img/product/six/7.jpg"
+}

@@ -1,0 +1,39 @@
+{% extends 'base_main.html' %}
+{% load static %}
+
+{% block extcss %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="/static/css/receive_info.css">
+{% endblock %}
+
+{% block extjs %}
+    <script src="{% static 'js/receive_info.js' %}"></script>
+{% endblock %}
+
+{% block title %}收货地址{% endblock %}
+
+
+{#注册内容#}
+{% block content %}
+    <div id="con-receive">
+        <div class="sign">
+            <h6>收货信息管理</h6>
+            <form action="{% url 'ZOL:receiveinfo' %}" method="post">
+                {% csrf_token %}
+                <span>收货人</span>
+                <br>
+                <input id="person" type="text" placeholder="  请输入收货人" name="person">
+                <br>
+                <span>收货手机号</span>
+                <br>
+                <input id="phone" type="text" placeholder="  请输入收货手机号" name="phone">
+                <span id="phone_msg"></span><br>
+                <span>收货地址</span>
+                <br>
+                <input id="address" type="text" placeholder="  请输入收货地址" name="address">
+                <br>
+                <input id="receive_submit" type="submit" value="保存">
+            </form>
+        </div>
+    </div>
+{% endblock %}

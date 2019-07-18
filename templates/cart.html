@@ -1,0 +1,81 @@
+{% extends 'base_main.html' %}
+{% load static %}
+
+{% block extcss %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="/static/css/statement.css">
+{% endblock %}
+
+{% block extjs %}
+    {{ block.super }}
+    <script>document.write('<script src="//' + (location.host || 'localhost').split(':')[0] + ':35929/livereload.js?snipver=1"></' + 'script>')</script>
+    <script src="{% static 'js/statement.js' %}"></script>
+    <script src="{% static 'js/cart.js' %}"></script>
+{% endblock %}
+
+{% block title %}购物车{% endblock %}
+
+{#把头部去掉#}
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <div id="content">
+        <br>
+        <div class="title"><span>全部商品</span></div>
+        <div class="goodtotal">
+            <table>
+                <tbody>
+                <tr>
+{#                    <th><input class="chose" type="checkbox"></th>#}
+{#                    <th class="cell1">店铺:<a href="#">数码风暴专营店</a> </th>#}
+                    <th class="cell1">商品信息</th>
+                    <th class="cell2">版本</th>
+                    <th class="cell2">单价</th>
+                    <th class="cell3">数量</th>
+                    <th class="cell4">金额</th>
+                    <th class="cell5">操作</th>
+                </tr>
+                {% for cart in carts %}
+                    <tr class="good_list" cartid="{{ cart.id }}">
+                        <td class="good_img">
+                            <span class="good_select"></span>
+                            <img src="{{ cart.good.img }}" >
+                            <span>{{ cart.good.brand.cname }} {{ cart.good.name }}</span>
+                        </td>
+                        <td class="good_version">
+                            <span>
+                                颜色：{{ cart.color }}<br>
+                                运行内存：{{ cart.ram }}<br>
+                                只读内存：{{ cart.rom }}
+                            </span>
+                        </td>
+                        <td class="good_price">
+                            ¥&nbsp;<span>{{ cart.good.price }}</span>
+                        </td>
+                        <td class="good_num">
+                            <button class="reduce">-</button>&nbsp;
+                            <span>{{ cart.num }}</span>&nbsp;
+                            <button class="add">+</button>
+                        </td>
+                        <td class="good_total">
+                            ¥<span></span>
+                        </td>
+                        <td class="good_del">
+                            <a href="#" class="del">删除</a>
+                        </td>
+                    </tr>                
+                {% endfor %}
+                
+            </tbody></table>
+            <div class="handle">
+                <div>
+                    <span class="all_select"></span> <b>全选</b>
+                    <span class="cart_num">已选择商品 <b>0</b> 件 </span>
+                    <span class="cart_total">合计（不含运费）：<b>0.00</b></span>
+                </div>
+                <button class="cart_submit submit">结算</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

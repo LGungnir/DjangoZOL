@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+{#    <meta name="viewport" content="width=device-width, initial-scale=1">#}
+
+    <title> {% block title %}ZOL{% endblock %} </title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/public.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/hover.css' %}">
+    {% block extcss %}
+    {% endblock %}
+
+
+
+</head>
+<body>
+{#    左侧小红猫#}
+    {% block redcat %}
+
+    {% endblock %}
+    {#右侧黑条导航#}
+    {% block toolbar %}
+
+    {% endblock %}
+
+    {#最上面的导航栏#}
+    {% block sign %}
+
+    {% endblock %}
+
+    {#ZOL商城以下#}
+    {% block header %}
+
+    {% endblock %}
+
+    {#导航#}
+    {% block nav %}
+
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+    {% endblock %}
+    
+
+    
+    <script src="{% static 'js/jquery-3.1.0.js' %}"></script>
+    <script src="{% static 'js/jquery.cookie.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    {% block extjs %}
+    {% endblock %}
+
+</body>
+</html>

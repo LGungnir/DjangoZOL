@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alipay</title>
+</head>
+<body>
+    <h2>支付宝</h2>
+
+    <button id="pay">支付</button>
+
+    {% load static %}
+    <script src="{% static 'js/jquery-3.1.0.js' %}"></script>
+    <script src="{% static 'js/alipay.js' %}"></script>
+    <script>
+        $.ajaxSetup({
+            data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+        })
+    </script>
+</body>
+</html>

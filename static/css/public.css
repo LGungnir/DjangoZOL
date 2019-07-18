@@ -1,0 +1,65 @@
+@charset "UTF-8";
+body{font:12px/1.5 Arial}
+body,ul,dl,dd,p,h1,h2,h3,h4,h5,h6,dl,dt,dd,ol,tr,td,th{margin: 0;padding:0}
+ul{list-style: none}
+a{text-decoration: none}
+img{display: block}
+#research{position: fixed;left: 2%;top: 405px;}
+#toolbar{width: 37px;height: 100%;position: fixed;right: 0;background: #2d2d2d}
+#toolbar .ico{position: fixed;top:40%}
+#toolbar .ico li {margin-bottom: 10px;position: relative;cursor: pointer;}
+#toolbar .ico li img{position: relative;z-index: 1000}
+
+#toolbar .ico li a{display: none;height: 32px;width: 0px;background: red;text-align: center;line-height: 32px;font-size: 12px;color: white;position: absolute;top:0px;left: 0px;}
+
+
+#sign,#footer,#fr_link{width: 1423px;}
+.toper,.footer_body,.wrapper{width: 1200px;margin: 0 auto;}
+
+#sign{height: 29px;border-bottom: 1px solid #e6e6e6;background: #f5f5f5}
+.toper{font-size: 12px;color: #666666}
+
+.login_info{float: left;padding-top: 9px;padding-bottom: 8px}
+.back-home a{color: #666666;padding-right: 20px}
+.login a {padding-right: 20px}
+/*.cancell{display: none}*/
+
+.qucik_menu{float: right;}
+.qucik_menu li{float: left;margin: 0 10px;width: 48px;height: 29px;line-height: 29px;text-align: center}
+.qucik_menu .buycenter{width: 81px;margin: 0;position: relative}
+.qucik_menu .shopcar{width: 55px}
+.qucik_menu .zolonline{width: 60px;}
+.qucik_menu .con_ser{width: 81px;position: relative}
+.qucik_menu .separator{margin: 0 10px;width: 1px}
+.qucik_menu li a {color: #666666;font-size: 12px}
+.qucik_menu .menu_phone{width: 96px;margin: 0;position: relative}
+.qucik_menu .menu_phone a{width: 96px;height: 29px;display: block;background: url("../img/topbar_ico.png") no-repeat -4px 0px; padding: 0 23px 0 25px}
+
+#footer{height: 319px;border-top: 1px solid #e6e6e6;}
+.footer_service{height: auto; overflow: hidden;padding:30px 0}
+.footer_service li{float: left;width: 209px;height: 50px;position: relative;line-height: 50px;padding: 0 70px;}
+.footer_service li a {display: inline-block; width: 72px;height: 24px;font-size: 18px;line-height: 24px;color: #333}
+.footer_service i {position: absolute; left:  0px; top: 0px;height: 50px}
+
+.footer_servic_relate{padding: 20px 0;overflow: hidden;height: auto;border-top: 1px solid #ededed}
+.footer_servic_relate dl {float: left;width: 175px}
+.footer_servic_relate dl dt{width: 175px; height: 28px;color: #666666;font-size: 14px;font-weight: bold}
+.footer_servic_relate dl dd p {width: 175px; height: 28px;line-height: 28px;}
+.footer_servic_relate dl dd p a{color: #666}
+.hotline {background: url("../img/footer.png") no-repeat 0 -95px;padding-left: 60px;margin-right: 20px;}
+.hotline dd a {background: url("../img/footer.png") no-repeat 0 0;display: block;width: 98px;height: 32px;padding-left: 26px;line-height: 32px;font-size: 12px;color: #333333}
+.cooperation {background: url("../img/footer.png") no-repeat 0 -220px ;padding-left: 60px}
+.btn{width: 90px;height: 28px;display: block;background: #ff3333;line-height: 16px;text-align: center;margin-top: 6px;border-radius: 2px}
+.btn span{color: white;}
+
+#fr_link{height: 222px;background: #2d2d2d;padding: 30px 0;}
+.wrapper,.parter,.footer-nav,.copyright{height: auto}
+.footer-nav,.copyright{width: 1210px;margin-left: -10px}
+.parter{padding: 0 135px 0 55px;position: relative}
+.parter span{position: absolute;top:0;left: 0px;color: #ccc}
+.parter p {width: 905px}
+.parter a,.footer-nav a{margin-left :10px;padding-right: 10px; color: #ffffff;font-size: 12px;border-right: 1px solid #546654}
+.footer-nav{padding-top: 7px}
+.copyright{color: #999;padding-top: 20px}
+
+.copyright a {color: #999;margin: 0 10px}

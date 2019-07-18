@@ -1,0 +1,35 @@
+@charset "UTF-8";
+.back-home a:hover{color: #c00;text-decoration: underline}
+.login a:hover{color: #c00;text-decoration: underline}
+.register a:hover{color: #c00;text-decoration: underline}
+.myorder a:hover{color: #c00;text-decoration: underline}
+.shopcar a:hover{color: #c00;text-decoration: underline}
+.zolonline a:hover{color: #c00;text-decoration: underline}
+.seller a:hover{color: #c00;text-decoration: underline}
+.helpcenter a:hover{color: #c00;text-decoration: underline}
+
+.buycenter:hover{background: white}
+.menu_phone:hover{background: white}
+.con_ser:hover{background: white}
+
+.hot-search a:hover{color: #f33;text-decoration: underline}
+
+.menu_nav_container .menu_nav_containerli:hover{background: white;}
+
+
+.nav_list a:hover{color: #ff3333; }
+.nav_tips a:hover{color: #c00}
+
+.shoptitle_ul a:hover{color: #c00}
+
+.selection_title span a:hover{color: #c00;text-decoration: underline}
+.phoneSta a:hover{color: #c00;text-decoration: underline}
+
+.listtall div a:hover{color: #c40000}
+.listshort div a:hover{color: #c40000}
+
+.tuan_list li:hover{border-bottom: 2px solid #f33}
+
+.cooperation .btn:hover{background: #c40000}
+
+

@@ -1,0 +1,15 @@
+.sign{float: right;width: 360px;margin: 10px 25px 5px 25px;}
+.sign h6{padding: 20px 0;font-size: 24px;font-weight: normal;color: #666666;line-height: 24px;}
+.sign h6 span{float: right;font-size: 12px}
+.sign h6 span a {color: #666666}
+
+input{width: 335px; height: 44px;margin-bottom: 20px;font-size: 14px;padding: 10px 0}
+
+
+#con-receive{width: 1423px;overflow: hidden;height: auto}
+#con-receive .sign{margin: 0 auto;float: none;width: 480px}
+#receive_submit{width: 335px;padding: 0;margin: 0;font-size:16px;font-weight: bold;height: 44px;background: #c00;color: white;border: 0;border-radius: 3px}
+
+#con-receive span{font-size: 16px;color: #333}
+
+.errorlist li{color: red}

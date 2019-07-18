@@ -1,0 +1,104 @@
+{% extends 'base_main.html' %}
+{% load static %}
+
+{% block extcss %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="/static/css/statement.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/order.css">
+{% endblock %}
+
+{% block extjs %}
+    {{ block.super }}
+    <script>document.write('<script src="//' + (location.host || 'localhost').split(':')[0] + ':35929/livereload.js?snipver=1"></' + 'script>')</script>
+    <script src="{% static 'js/statement.js' %}"></script>
+    <script src="{% static 'js/cart.js' %}"></script>
+    <script src="{% static 'js/order.js' %}"></script>
+{% endblock %}
+
+{% block title %}购物车{% endblock %}
+
+{#把头部去掉#}
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <div id="content">
+        <br>
+        <div class="title"><span>全部订单</span></div>
+        <div class="goodtotal">
+            <table>
+                <tbody>
+                <tr>
+                    <th class="cell1">订单编号</th>
+                    <th class="cell2">时间</th>
+                    <th class="cell3">信息</th>
+                    <th class="cell4">金额</th>
+                    <th class="cell5">收货地址</th>
+                    <th class="cell2">操作</th>
+                </tr>
+                {% for order in orders %}
+                    <tr class="order_list">
+                        <td>{{ order.order_id }}</td>
+                        <td>{{ order.order_create }}</td>
+                        <td>
+                            {% for goods in order.ordergoods_set.all %}
+                                <p>{{ goods.goods.brand.cname }} {{ goods.goods.name }} * {{ goods.num }}</p>
+                            {% endfor %}
+                        </td>
+                        <td>{{ order.order_price }}</td>
+                        <td>
+                            {% if order.receive %}
+                                <p></p>收货人：<span>{{ order.receive.person }}</span></p>
+                                <p>收货电话：<span>{{ order.receive.phone }}</span></p>
+                                <p>收货地址：<span>{{ order.receive.address }}</span></p>
+                            {% else %}
+                                <a class="toreceive" href="{% url 'ZOL:littleskip' order.order_id 1 %}">添加收货地址</a>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if order.order_status == 1 %}
+                                <p>已支付</p>
+                            {% else %}
+                                <p><a class="topay" href="{% url 'ZOL:littleskip' order.order_id 2 %}">去支付</a></p>
+                            {% endif %}
+
+                        </td>
+                    </tr>
+                {% endfor %}
+
+
+{#                {% for cart in carts %}#}
+{#                    <tr class="good_list" cartid="{{ cart.id }}">#}
+{#                        <td class="good_img">#}
+{#                            <span class="good_select"></span>#}
+{#                            <img src="{{ cart.good.img }}" >#}
+{#                            <span>{{ cart.good.brand.cname }} {{ cart.good.name }}</span>#}
+{#                        </td>#}
+{#                        <td class="good_version">#}
+{#                            <span>#}
+{#                                颜色：{{ cart.color }}<br>#}
+{#                                运行内存：{{ cart.ram }}<br>#}
+{#                                只读内存：{{ cart.rom }}#}
+{#                            </span>#}
+{#                        </td>#}
+{#                        <td class="good_price">#}
+{#                            ¥&nbsp;<span>{{ cart.good.price }}</span>#}
+{#                        </td>#}
+{#                        <td class="good_num">#}
+{#                            <button class="reduce">-</button>&nbsp;#}
+{#                            <span>{{ cart.num }}</span>&nbsp;#}
+{#                            <button class="add">+</button>#}
+{#                        </td>#}
+{#                        <td class="good_total">#}
+{#                            ¥<span></span>#}
+{#                        </td>#}
+{#                        <td class="good_del">#}
+{#                            <a href="#" class="del">删除</a>#}
+{#                        </td>#}
+{#                    </tr>#}
+{#                {% endfor %}#}
+
+            </tbody></table>
+        </div>
+    </div>
+{% endblock %}

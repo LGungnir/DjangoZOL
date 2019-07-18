@@ -1,0 +1,12 @@
+/*收货信息*/
+.receive_box{width: 1200px;height: 300px;margin: 0 auto;overflow: hidden;margin-bottom: 50px;margin-top: 20px;}
+.receive_box div{width: 1050px;height: 250px;padding: 15px;border: 1px dashed black;}
+.receive_box h3{width: 1050px;margin-bottom: 15px;}
+.receive_box a{float: right;font-size: 14px;color: #3dc6ff;margin-top: 10px;}
+.receive_list{width: 100%;height: 300px;}
+.receive_info {width: 100%;height: 35px;}
+.receive_info p{width: 100%; font-size: 18px;}
+.receive_info p span{display: inline-block;height: 100%;}
+.receive_info p span:nth-child(2){width: 150px;margin-left: 10px;}
+.receive_info p span:nth-child(3){width: 250px;}
+.receive_info p span:last-child{width: 500px;}

@@ -1,0 +1,96 @@
+[
+  {
+    "img": "img/1f/mainsell.jpg"
+  },
+  {
+    "id": "10086",
+    "img": "img/1f/6.jpg",
+    "goodimg" : {
+                          "big" : "img/1f/10086/B1.jpg",
+                          "small" : [ {"img" :"img/1f/10086/s1.jpg"},
+                                           {"img" :"img/1f/10086/s2.png"},
+                                           {"img" :"img/1f/10086/s3.png"}
+                                        ]
+                        },
+    "a": "魅族MX6",
+    "p": "PADE相位对焦",
+    "price" : 1998
+  },
+  {
+    "id": "10087",
+    "img": "img/1f/4.png",
+    "goodimg" : {
+                          "big" : "img/1f/10087/B1.png",
+                          "small" :[{"img" : "img/1f/10087/s1.png"},
+                                         {"img" : "img/1f/10087/s2.png"},
+                                         {"img" : "img/1f/10087/s3.png"}
+                                        ]
+    },
+    "a": "三星新品C5",
+    "p": "骁龙八核 更有惊艳粉色",
+    "price" : 2998
+  },
+  {
+    "id": "10088",
+    "img" : "img/1f/2.jpg",
+    "goodimg" : {
+                          "big" : "img/1f/10088/B1.jpg",
+                          "small": [{"img" : "img/1f/10088/s1.jpg"},
+                                         {"img" : "img/1f/10088/s2.jpg"},
+                                         {"img" : "img/1f/10088/s3.jpg"},
+                                         {"img" : "img/1f/10088/s4.jpg"}
+                          ]
+    },
+    "a":"魅蓝Note3(全网通)",
+    "p":"金属机身 指纹解锁",
+    "price" : 948
+  },
+  {
+    "id": "10089",
+    "img" : "img/1f/5.jpg",
+    "goodimg" : {
+                        "big" : "img/1f/10089/B1.jpg",
+                        "small": [{"img" : "img/1f/10089/s1.jpg"},
+                                       {"img" : "img/1f/10089/s2.jpg"},
+                                       {"img" : "img/1f/10089/s3.jpg"},
+                                       {"img" : "img/1f/10089/s4.jpg"},
+                                       {"img" : "img/1f/10089/s5.jpg"}
+                        ]
+    },
+    "a" : "荣耀 8 全网通",
+    "p" : "好手感 令人无法拒绝",
+    "price" : 991
+  },
+  {
+    "id": "10090",
+    "img" : "img/1f/3.jpg",
+    "goodimg" : {
+                          "big" : "img/1f/10090/B1.jpg",
+                          "small": [{"img" : "img/1f/10090/s1.jpg"},
+                            {"img" : "img/1f/10090/s2.jpg"},
+                            {"img" : "img/1f/10090/s3.jpg"},
+                            {"img" : "img/1f/10090/s4.jpg"},
+                            {"img" : "img/1f/10090/s5.jpg"}
+                          ]
+    },
+    "a" : "苹果的iPhone 6S Plus",
+    "p" : "唯一的不同,处处都相同",
+    "price" : 2324
+  },
+  {
+    "id": "10092",
+    "img" : "img/1f/1.jpg",
+    "goodimg" : {
+                          "big" : "img/1f/10092/B1.jpg",
+                          "small": [{"img" : "img/1f/10092/s1.jpg"},
+                            {"img" : "img/1f/10092/s2.jpg"},
+                            {"img" : "img/1f/10092/s3.jpg"},
+                            {"img" : "img/1f/10092/s4.jpg"},
+                            {"img" : "img/1f/10092/s5.jpg"}
+                          ]
+    },
+    "a" : "vivo X7 Plus",
+    "p" : "赠豪华大礼包",
+    "price" : 1243
+  }
+]

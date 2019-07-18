@@ -1,0 +1,129 @@
+@charset "UTF-8";
+#new_product,#search,#search-layer,#nav,#content{width: 1423px;}
+.top-acitve-link,.header,.nav_box,.con_body,.secondfloor,.oneMoney,.header-layer{width: 1200px;margin: 0 auto}
+
+#new_product{height: 80px;}
+.top-acitve-link a {display: block}
+
+#search-layer{position: fixed;top: 0px;z-index: 10;background-color: white;display: none}
+#search-layer .header-layer{height: 66px}
+#search-layer .header-layer .logo{margin: 5px 75px}
+
+#search{height: 105px;margin-top: 10px}
+.header{height: 66px;}
+.logo{overflow: hidden; height: auto;display: inline-block;float: left}
+.logo h1 {display: block;overflow: hidden;height: auto;float: left}
+.logo a {display: block;float: left}
+.logo p {display: block;float: left;width: 165px;height: 44px;line-height: 44px;text-align: center;font-size: 14px;color: #666666;border-left:  1px solid #eee;margin-top: 3px;margin-left:10px;padding-left: 10px}
+
+
+.search-box{float: left;padding: 12px 0 0 56px}
+.search{border: 2px solid #c40000;position: relative;width: 536px; height: 36px}
+.text{float: left;width: 450px;height: 32px;padding: 6px 10px;position: absolute;left: 0;top: 0}
+.button{float: left;width: 89px;height: 32px;border: 0;position: absolute;top: 0;right: 0;background: #c40000;cursor: pointer;color: white;font-size: 16px}
+.hot-search a {color: #999;margin-right: 15px}
+.ad-div{float: right}
+.ad-div img{display: block;width: 180px;height: 60px}
+
+
+#nav{height: 465px;}
+.nav_box{position: relative;}
+.nav_list {width: 1000px;height: auto;overflow: hidden;float: right;border-bottom: 2px solid #c40000}
+.nav_list li{float: left;padding: 0 20px}
+.nav_list li a {font-size: 16px;color: black}
+
+.nav_tips {position: absolute;right: 0;top: 0}
+.nav_tips a {font-size: 16px;color: #ff3333}
+
+.category_nav{position: absolute;left: 0;top:0;z-index: 10000;width: 200px}
+.category_nav h2{text-align: center;background: #c40000;color: white;height: 26px;line-height: 26px;font-size: 1.7rem;}
+.menu_nav_container{background:#2d2d2d;height: 410px}
+.menu_nav_container .menu_nav_containerli{width: 198px; height: 38px;border-top: 1px solid #3d3d3d;background: #2d2d2d;text-align: center;line-height: 38px;position: relative;border-right: 1px solid white;border-left:  1px solid #2d2d2d}
+.menu_nav_container .menu_nav_containerli .menu_nav_containerfirst a {color: #fff;font-size: 12px;margin: 0 3px;font-weight: bold}
+
+.nav_box_right{float: right}
+.focus_inner{width: 740px; height: 400px;overflow: hidden;float: left;margin-top: 10px;margin-right: 10px;position: relative}
+.focus_inner .changeimg{width: 1000%;overflow: hidden;height: 400px;position: absolute}
+.focus_inner .changeimg li{float: left;width: 740px}
+.focus_inner .bar{position: absolute;z-index: 10;left: 50%;bottom: 5%;margin-left: -54px}
+.focus_inner .bar li{width: 18px; height: 18px; float: left;margin-right: 20px;border-radius: 50%;cursor: pointer;background: #000;color: white;text-align: center}
+
+
+
+
+.side{float: left;width: 240px; height: 402px}
+.shoptitle{width: 232px;height: 185px;border: 1px solid #ededed;padding: 15px 20px;margin-top:15px; }
+.shoptitle h3{font-weight: normal;margin-bottom: 5px;}
+.shoptitle_ul li{width: 198px; height: 24px;line-height: 24px;}
+.shoptitle_ul li a {font-size: 12px; color: #666666;}
+
+
+#content{height: 3188px;}
+.selection_title{height: 46px;position: relative}
+.selection_title h1{float: left;width: 200px;height: 46px;background: url("../img/row_title_v1.png") no-repeat 0 -40px}
+.selection_title span{position: absolute;right: 0;bottom: 10px}
+.selection_title span a {font-size: 12px;color: #666666;font-weight: normal}
+
+.tuan_list ul{overflow: hidden;height: auto; border-right: 1px solid #ededed; border-left:  1px solid #ededed}
+.tuan_list li {float: left;border-top:1px solid #ededed; border-bottom: 2px solid #ededed}
+.tuan_list li img {width:299px;height: 180px;display: block }
+
+.selection_title h2{float: left;width: 200px;height: 46px;background: url("../img/row_title_v1.png") no-repeat 0 0}
+
+.special_list img{display: block}
+.special_list ul{height: 371px}
+.special_list ul li{float: left}
+.special_list .smallimg{border-bottom: 1px solid #ededed;border-right: 1px solid #ededed}
+.selection_title h3{float: left;width: 200px;height: 46px;background: url("../img/row_title_v1.png") no-repeat 0 -85px}
+.selection_title .phoneSta{position: absolute;bottom: 0;right: 0}
+.selection_title .phoneSta a {color: #666 ;border-right: 1px solid #cccccc;
+padding:0 10px}
+
+
+.secondfloor{height: auto;overflow: hidden}
+.main_sell{float: left}
+.main_list{width: 416px;height: 206px;border: 1px solid #ededed}
+.figure_list{overflow: hidden;height: auto}
+.figure_list li{float: left}
+.figure_list .main_list li img{width: 419px;height: 208px}
+
+.main_list{overflow: hidden;position: relative;height: 208px}
+
+.figure_list .main_list .smalllun {width: 1257px; height: 208px; overflow: hidden;position: absolute}
+.figure_list .main_list .smalllun li {float: left}
+
+.main_list .bar1{position: absolute;z-index: 10;left: 50%;bottom: 5%;margin-left: -54px}
+.main_list .bar1 li{width: 18px; height: 18px; float: left;margin-right: 20px;border-radius: 50%;cursor: pointer;background: #000;color: white;text-align: center}
+
+
+
+.listtall{width: 209px; height: 210px; padding: 16px 25px 0 24px;border: 1px solid #ededed;position: relative}
+.listtall img{position: absolute;top: 75px}
+.listtall div a {color: #333;font-size: 14px;}
+.listtall p{color: #f33;font-size: 14px;height: 20px}
+.listshort{width: 209px;height: 210px; padding: 16px 25px 0 24px;border: 1px solid #ededed;position: relative}
+.listshort img{position: absolute;top: 75px;}
+.listshort div a {color: #333;font-size: 14px}
+.listshort p{color: #f33;font-size: 14px;height: 20px}
+
+
+
+.figure_list .listtall img ,.figure_list .listshort img{width: 160px;height: 120px}
+
+.logototal {border: 1px solid #ededed;height: auto;overflow: hidden;border-top: 0}
+.logototal li{float: left;width: 116px;height: 60px;padding: 3px 1px}
+
+.selection_title h4{float: left;width: 200px;height: 46px;background: url("../img/row_title_v1.png") no-repeat 0 -140px}
+
+.selection_title h5{float: left;width: 200px;height: 46px;background: url("../img/row_title_v1.png") no-repeat 0 -185px}
+
+.selection_title h6{float: left;width: 200px;height: 46px;background: url("../img/row_title_v1.png") no-repeat 0 -230px}
+
+.oneMoney{margin-top: 29px; margin-bottom: 9px}
+.oneMoney ul {border: 1px solid #ededed;padding: 15px 0 0 15px;height: 170px }
+.oneMoney h6{background: url("../img/one_Money.png") no-repeat 0 0;height: 27px; width: 342px}
+.oneMoney li{float: left;width: 180px; height: 163px;margin-right: 16px;position: relative}
+.oneMoney li img {width: 180px; height: 135px}
+.oneMoney p{text-align: center;background-color: rgba(0,0,0,0.6);color: #cccccc;height: 32px;line-height: 32px;position: absolute;bottom: 0px;width: 180px;overflow: hidden;display: block}
+.oneMoney h4{font-weight: normal;text-align: center;color: #333;font-size: 14px;margin-top: 10px}
+.oneMoney_box{position: relative;width: 180px;height: 135px;overflow: hidden}

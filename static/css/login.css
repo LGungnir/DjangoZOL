@@ -1,0 +1,24 @@
+@charset "UTF-8";
+#login{width:1423px }
+
+.login{width: 1200px; margin: 0 auto;overflow: hidden;height: auto;border: 1px solid #ededed}
+.nav{float: left}
+
+.sign{float: right;width: 360px;margin: 10px 25px 5px 25px;}
+.sign h6{padding: 20px 0;font-size: 24px;font-weight: normal;color: #666666;line-height: 24px;}
+.sign h6 span{float: right;font-size: 12px}
+.sign h6 span a {color: #666666}
+.phonelogin{background: url("../img/topbar_ico.png") no-repeat 0 0;padding-left: 24px;line-height: 30px}
+
+input{width: 335px; height: 44px;margin-bottom: 20px;font-size: 14px;padding: 10px 0}
+
+.forget{float: right;margin-right: 15px;cursor: pointer;color: #134ba0}
+
+
+#enter{width: 335px;padding: 0;margin: 0;font-size:16px;font-weight: bold;height: 44px;background: #c00;color: white;border: 0;border-radius: 3px}
+
+.linkparter{margin-top: 20px}
+.linkparter ul{width: 335px;height: 40px}
+.linkparter li{ float: left;margin-right: 26px;text-align: center;line-height: 33px;font-size: 12px}
+
+

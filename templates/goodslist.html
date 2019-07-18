@@ -1,0 +1,161 @@
+{% extends 'base_ext.html' %}
+{% load static %}
+
+{% block extcss %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/goods.css' %}">
+    <link rel="stylesheet" href="{% static 'css/goodslist.css' %}">
+{% endblock %}
+
+{% block extjs %}
+    {{ block.super }}
+    <script src="{% static 'js/goodslist.js' %}"></script>
+
+{#    <script src="{% static 'js/list.js' %}"></script>#}
+{% endblock %}
+
+{% block title %}商品列表{% endblock %}
+
+{% block nav_content %}
+    <div class="good-list-data">
+        <div class="brand">
+            <dl>
+                <dt>品牌：</dt>
+                <dd>
+                    <ul class="listlogo">
+                        {% for brand in brands %}
+                            <li><a href="{% url 'ZOL:goodsearch' brand.cname min_price max_price feature network sort_by key_word %}"><img src="{{ brand.img }}"></a> </li>
+                        {% endfor %}
+
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="price">
+            <dl>
+                <dt>价格：</dt>
+                <dd>
+                    <ul class="price-total">
+                        <li><a href="{% url 'ZOL:goodsearch' brand_name '0' '500' feature network sort_by key_word %}">500元以下</a> </li>
+                        <li><a href="{% url 'ZOL:goodsearch' brand_name '500' '1000' feature network sort_by key_word %}">500-1000元</a> </li>
+                        <li><a href="{% url 'ZOL:goodsearch' brand_name '1000' '2000' feature network sort_by key_word %}">1000-200元</a> </li>
+                        <li><a href="{% url 'ZOL:goodsearch' brand_name '2000' '3000' feature network sort_by key_word %}">2000-3000元</a> </li>
+                        <li><a href="{% url 'ZOL:goodsearch' brand_name '3000' '4000' feature network sort_by key_word %}">3000-4000元</a> </li>
+                        <li><a href="{% url 'ZOL:goodsearch' brand_name '4000' '0' feature network sort_by key_word %}">4000元以上</a> </li>
+
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="character">
+            <dl>
+                <dt>特性：</dt>
+                <dd>
+                    <ul class="char-total">
+                        {% for feature in features %}
+                             <li><a href="{% url 'ZOL:goodsearch' brand_name min_price max_price feature network sort_by key_word %}">{{ feature }}</a> </li>
+                        {% endfor %}
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="net-type">
+            <dl>
+                <dt>网络类型：</dt>
+                <dd>
+                    <ul class="net-type-total">
+                        {% for network in networks %}
+                            <li><a href="{% url 'ZOL:goodsearch' brand_name min_price max_price feature network sort_by key_word %}">{{ network }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+{#    自加的，用于显示筛选的标签#}
+    <div class="goods-list-nav">
+{#        <ul class="tags_list">#}
+        <ul class="goods-list-titlebar" style="background: #f7f7f7">
+            {% if brand_name != '0' %}                                      {# 品牌 #}
+                <li class="tags_list">
+                    <b style="font-size: 14px;">{{  brand_name }}</b>
+                    <a href="{% url 'ZOL:goodsearch' '0' min_price max_price feature network sort_by key_word %}"><span class="glyphicon glyphicon-remove"></span></a>
+                </li>
+            {% endif %}
+
+            {% if min_price == '0' and max_price == '0' %}          {# 价格 #}
+            {% else %}
+                {% if max_price == '0' %}
+                    <li class="tags_list">
+                        <b style="font-size: 14px;">{{ min_price }}元以上</b>
+                        <a href="{% url 'ZOL:goodsearch' brand_name '0' '0' feature network sort_by key_word %}"><span class="glyphicon glyphicon-remove"></span></a>
+                    </li>
+                {% elif min_price == '0' %}
+                    <li class="tags_list">
+                        <b style="font-size: 14px;">{{ max_price }}元以下</b>
+                        <a href="{% url 'ZOL:goodsearch' brand_name '0' '0' feature network sort_by key_word %}"><span class="glyphicon glyphicon-remove"></span></a>
+                    </li>
+                {% else %}
+                    <li class="tags_list">
+                        <b style="font-size: 14px;">{{ min_price }} - {{ max_price }}元</b>
+                        <a href="{% url 'ZOL:goodsearch' brand_name '0' '0' feature network sort_by key_word %}"><span class="glyphicon glyphicon-remove"></span></a>
+                    </li>
+                {% endif %}
+            {% endif %}
+
+            {% if feature != '0' %}                                 {# 特性 #}
+                <li class="tags_list">
+                    <b style="font-size: 14px;">{{  feature }}</b>
+                    <a href="{% url 'ZOL:goodsearch' brand_name min_price max_price '0' network sort_by key_word %}"><span class="glyphicon glyphicon-remove"></span></a>
+                </li>
+            {% endif %}
+            {% if network != '0' %}                                 {# 网络 #}
+                <li class="tags_list">
+                    <b style="font-size: 14px;">{{  network }}</b>
+                    <a href="{% url 'ZOL:goodsearch' brand_name min_price max_price feature '0' sort_by key_word %}"><span class="glyphicon glyphicon-remove"></span></a>
+                </li>
+            {% endif %}
+
+        </ul>
+    </div>
+    <div class=" goods-list-service">
+        <span>ZOL商城服务保障</span>
+        <ul>
+            <li><a href="#"><i><img src="/static/img/sort/xin.png" alt=""></i>行货保证</a></li>
+            <li><a href="#"><i><img src="/static/img/sort/piao.png" alt=""></i>发票保障</a></li>
+            <li><a href="#"><i><img src="/static/img/sort/sf.png" alt=""></i>顺丰包邮</a></li>
+            <li><a href="#"><i><img src="/static/img/sort/tuihuan.png" alt=""></i>无忧退换</a></li>
+            <li><a href="#"><i><img src="/static/img/sort/pei.png" alt=""></i>先行赔付</a></li>
+        </ul>
+    </div>
+    <div class="goods-list-nav">
+        <ul class="goods-list-titlebar">
+            {% for sort in sort_list %}
+                {% if forloop.counter0 == sort_by %}
+                    <li style="background: #4b4b4b;"><a style="color: white" href="{% url 'ZOL:goodsearch' brand_name min_price max_price feature network forloop.counter0 key_word %}">{{ sort }}</a></li>
+                {% else %}
+                    <li><a href="{% url 'ZOL:goodsearch' brand_name min_price max_price feature network forloop.counter0 key_word %}">{{ sort }}</a></li>
+                {% endif %}
+
+
+            {% endfor %}
+        </ul>
+        <ul class="goods-list-detail">
+            {% for good in goods %}
+                <li>
+                    <div>
+                        <a href="{% url 'ZOL:gooddetail' good.id %}">
+                            <img src="{{ good.img }}">
+                            <div class="goods-title">
+                                {{ good.brand.cname }}&nbsp;{{ good.brand.ename.title }}&nbsp;
+                                {{ good.name }}【{{ good.feature }}】
+                            </div>
+                            <span>￥{{ good.price }}</span>
+                        </a>
+                    </div>
+                </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+{% endblock %}

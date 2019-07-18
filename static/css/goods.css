@@ -1,0 +1,64 @@
+@charset "UTF-8";
+.nav_box{height: 27px;}
+.menu_nav_container ul{z-index: 1000}
+.crumbs,.goodsmessage{width: 1200px;margin: 0 auto}
+.crumbs p a{display: inline-block;padding: 10px 10px}
+
+.goodsmessage{height: 600px;position: relative}
+.goodimg{width: 400px;height: 400px;float: left; position: relative}
+.goodimg img {width: 400px;height: 400px}
+
+.goodimg .smallArea{position: absolute;width: 100px;height:100px;background:rgba(200,255,200,0.3);left: 0;right: 0;z-index: 100;display: none}
+
+
+.gooddetail{width: 500px;height: 500px;float: left;margin-left: 25px}
+.gooddetail h1{font-weight: normal;font-size: 16px;padding: 5px 0}
+.gooddetail .detail{color: #666;font-size: 14px;padding: 15px 0;display: block}
+.gooddetail h2{background:#cccccc;padding:10px 20px;font-weight: normal;font-size: 16px;color: #999 }
+.gooddetail h2 i{font-style: normal;font-size: 32px;color: #c40000;padding-left: 32px}
+.peisong{padding: 20px 0}
+.peisong b,.evaluate b,.size b,.number b{font-size: 12px;font-weight: normal;padding:0 20px 0 0}
+.select{margin: 0 10px}
+
+.evaluate-service{overflow:hidden;height: auto;padding: 20px 0 ;border-bottom: 1px solid #ededed;margin-bottom: 20px}
+.evaluate-service li{width: 100px;height: 20px;float: left;position: relative;padding-left: 30px;}
+.evaluate-service li a{color: #2d2d2d}
+.evaluate-service li img{width: 22px;height: 20px}
+.evaluate-service li i{position:absolute;left: 0 }
+
+.active{background: #c40000;color: white}
+
+.size{margin-bottom: 20px}
+.size i {display: inline-block;height: 26px;line-height: 26px;font-style: normal;padding: 0 9px;border: 2px solid #ededed}
+
+.color{margin-bottom: 20px}
+.color i {display: inline-block;height: 26px;line-height: 26px;font-style: normal;padding: 0 9px;border: 2px solid #ededed}
+.color b , .color i{font-size: 14px;}
+
+
+
+
+.number{height: 30px}
+.number b{float: left;display: block;font-size: 14px;font: bolder;}
+.buy-number{float: left}
+.buy-number li{ float: left;width: 35px;height: 35px;border: 1px solid #ededed;text-align: center;line-height: 35px;font-size: 20px}
+
+.buylist{margin-top: 30px;text-align: center}
+.buylist input{width: 140px;height: 50px;border: 1px solid #ededed; border-radius: 2px;background: #ffeded;font-size: 22px;color: #c00;margin-left: 20px;cursor: pointer;}
+.buylist .buy{background: #c00;color: white}
+
+.storeinfo{width: 200px;height: 500px;float: left;border: 1px solid #ededed;margin-left: 50px;}
+.storeinfo .storename{text-align: center;width: 197px; height: 95px;line-height: 95px;font-size: 16px;border-bottom: 1px solid #ededed}
+.storemes{border-bottom: 1px solid #ededed}
+.storemes li{padding: 10px 10px 10px 10px;font-size: 12px;color: #666666}
+.score li {padding: 5px 10px;font-size: 16px;color: #666666}
+.score li span{color: red}
+
+.storeinfo input{width: 80px;font-size: 16px;line-height: 32px;background: white;border: 1px solid #ededed;margin-left: 12px;margin-top: 20px}
+
+.smallgood{position: absolute;bottom: 120px}
+.smallgood li{float: left;margin-left: 20px;margin-top: 10px;border: 2px solid white}
+#msg{width: 1px;height: 52px;line-height: 52px;font-size: 16px;text-align: center;color: white;background: #360;position: fixed;right: 37px;top: 420px;display: none}
+
+
+.bigArea{position: absolute;width: 300px;height: 300px;left: 35%;overflow: hidden;display: none}

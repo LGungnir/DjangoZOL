@@ -1,0 +1,131 @@
+{% extends 'base_ext.html' %}
+{% load static %}
+
+{% block extcss %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/goods.css' %}">
+    <style type="text/css">
+        .u-flyer{display:block; width:50px; height:50px; border-radius:50px; position:fixed; z-index: 9999;}
+    </style>
+{% endblock %}
+
+{% block extjs %}
+    {{ block.super }}
+    <script src="{% static 'js/jquery.fly.min.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/goodslist.js' %}"></script>
+    <script src="{% static 'js/gooddetail.js' %}"></script>
+
+
+{% endblock %}
+
+{% block title %}商品详情{% endblock %}
+
+{% block nav_content %}
+    <div class="crumbs">
+        <div>
+            <p>
+                <a href="#">首页</a>&gt;
+                <a href="#">手机</a>
+            </p>
+        </div>
+    </div>
+    <div class="goodsmessage">
+        <div class="goodimg">
+            <img src="{{ good.img }}" alt="">
+        </div>
+
+
+        <div class="gooddetail">
+            <div class="peisong">
+                <b>配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;送</b>
+                <select class="select" name="target">
+                    <option>广东</option>
+                    <option>香港</option>
+                    <option>澳门</option>
+                </select>顺丰哟
+            </div>
+            <div class="evaluate">
+                <b>评&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价</b>
+                <span>由数码风暴专营店发货并承诺提供一下服务保障</span>
+                <ul class="evaluate-service">
+                    <li>
+                        <a href="#">行货保证</a>
+                        <i><img src="/static/img/cun.jpg" alt=""> </i>
+                    </li>
+                    <li>
+                        <a href="#">发票保证</a>
+                        <i><img src="/static/img/piao.jpg" alt=""> </i>
+                    </li>
+                    <li>
+                        <a href="#">顺丰包邮</a>
+                        <i><img src="/static/img/sf.jpg" alt=""> </i>
+                    </li>
+                    <li>
+                        <a href="#">无忧退换</a>
+                        <i><img src="/static/img/return.jpg" alt=""> </i>
+                    </li>
+                    <li>
+                        <a href="#">先行赔付</a>
+                        <i><img src="/static/img/pei.jpg" alt=""> </i>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="color">
+                <b>颜色类别:</b>&nbsp;&nbsp;&nbsp;&nbsp;
+                {% for color in colors %}
+                    <i>{{ color }}</i>
+                {% endfor %}
+            </div>
+            <div class="color">
+                <b>运行内存:</b>&nbsp;&nbsp;&nbsp;&nbsp;
+                {% for ram in rams %}
+                    <i>{{ ram }}</i>
+                {% endfor %}
+            </div>
+            <div class="color">
+                <b>只读内存:</b>&nbsp;&nbsp;&nbsp;&nbsp;
+                {% for rom in roms %}
+                    <i>{{ rom }}</i>
+                {% endfor %}
+            </div>
+            <div class="number">
+                <b>购买数量</b>
+                <ul class="buy-number">
+                    <li style="cursor: pointer;">-</li>
+                    <li class="goodNum">1</li>
+                    <li style="cursor: pointer;">+</li>
+                </ul>
+            </div>
+            <div class="buylist">
+                <input class="buy" goodId="{{ good.id }}" type="button" value="立即购买">
+            <input class="add" goodId="{{ good.id }}" type="button" value="加入购物车">
+            </div>
+        </div>
+        <div class="storeinfo">
+            <div class="storename">
+                <a href="#">数码风暴经营店</a>
+            </div>
+            <div>
+                <ul class="storemes">
+                    <li>客服电话 : 10086</li>
+                    <li>接待时间 : 9:00~22:00</li>
+                    <li>店铺三十天退款率 : 100%</li>
+                    <li>店铺动态评分</li>
+                </ul>
+                <ul class="score">
+                    <li>描述 : <span>5.0</span></li>
+                    <li>服务 : <span>5.0</span></li>
+                    <li>物流 : <span>5.0</span></li>
+                </ul>
+                <input type="button" value="进入店铺">
+                <input type="button" value="关注店铺">
+            </div>
+        </div>
+        <ul class="smallgood"></ul>
+        <div class="bigArea" style="display: none;">
+            <img style="width: 800px;height: 800px;position: absolute">
+        </div>
+    </div>
+{% endblock %}

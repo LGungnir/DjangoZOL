@@ -1,0 +1,14 @@
+@charset "UTF-8";
+#con-register{width: 1423px;overflow: hidden;height: auto}
+#con-register .sign{margin: 0 auto;float: none;width: 480px}
+#register{width: 335px;padding: 0;margin: 0;font-size:16px;font-weight: bold;height: 44px;background: #c00;color: white;border: 0;border-radius: 3px}
+
+#con-register span{font-size: 16px;color: #333}
+
+.sure{width: 200px}
+
+#con-register i{font-style: normal;color: #c40000;font-size: 12px;}
+
+.vcode{display: inline-block;width: 132px;height: 44px;font-size: 24px;text-align: center;line-height: 44px;}
+
+.errorlist li{color: red}

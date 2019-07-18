@@ -1,0 +1,54 @@
+@charset "UTF-8";
+#content{width: 1423px;}
+.goodtotal table td,th{text-align: center;font-size: 16px}
+.title,.goodtotal{width: 1200px;margin: 0 auto;position: relative}
+.title{overflow: hidden;height: auto}
+.title span{font-size: 16px;font-weight: bold;float: left}
+
+.chose{}
+.cell1{width:250px;text-align: left;padding: 0 20px}
+.cell1 .goods-info a{display:inline-block;float: left;border: 1px solid #ededed}
+.goods-info{overflow: hidden;height: auto;padding: 20px 20px}
+.goods-info span{font-size: 12px;display: block;margin-bottom: 10px }
+.color-suit{float: left}
+.color-suit dl{font-size: 12px;margin-bottom: 10px;overflow: hidden;height: auto}
+.color-suit dd{padding-left: 20px}
+.color-suit dd,dt{float: left}
+.color-suit dt{color: #999}
+.cell2{width: 200px}
+.cell3{width: 200px}
+.cell4{width: 200px}
+
+.buy-number{overflow: hidden;height: auto;padding-left: 30px}
+.buy-number li{float: left;width: 20px;height: 20px;line-height: 20px;text-align: center;font-size: 16px;border: 1px solid #ededed}
+.add,.reduce{cursor: pointer}
+
+
+
+th{padding: 20px; }
+td{border-top:1px solid #d6d6d6;background: #f5f5f5;border-bottom:1px solid #d6d6d6;background: #f5f5f5;}
+
+.good_img{height: 120px;padding: 10px;}
+.good_img .good_select{width: 15px;height: 15px;border: 1px solid #d6d6d6;float: left;margin-top: 35px;background: white}
+.glyphicon-ok{color: red}
+.good_img img{display: inline-block;width: 80px;height: 80px;float: left;margin-left: 10px;}
+.good_version span{float: left;font-size: 14px;color: #6c6c6c;padding-left: 40px;text-align: left;}
+.good_price span{text-align: center;}
+
+.handle{width: 1122px;height: 50px;background: #e5e5e5;margin-top:20px;}
+.handle div span b{color: red}
+.handle div span{font-size: 14px;}
+.handle div{width:950px;height: 30px;margin:10px;float: left}
+.all_select{width: 20px;height: 20px;border: 1px solid #d6d6d6;float: left;margin: 5px;background: white}
+.handle b{font-size: 18px;height: 20px;line-height: 30px;}
+.handle .cart_num{margin-left:530px; }
+.handle .cart_total{margin-left:50px; }
+.submit{width: 140px;height: 50px;border: 1px solid #ededed;border-radius: 2px;background: #c00;
+font-size: 22px;cursor: pointer;color: white;display: block;float: right}
+
+
+
+
+
+
+

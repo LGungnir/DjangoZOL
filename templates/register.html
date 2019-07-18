@@ -1,0 +1,67 @@
+{% extends 'base_main.html' %}
+{% load static %}
+
+{% block extcss %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/register.css">
+
+{% endblock %}
+
+{% block extjs %}
+    <script src="{% static 'js/register.js' %}"></script>
+{% endblock %}
+
+{% block title %}注册{% endblock %}
+
+{#把顶部导航栏去掉#}
+{% block sign %}
+{% endblock %}
+
+{#注册内容#}
+{% block content %}
+    <div id="con-register">
+        <div class="sign">
+            <h6>注册ZOL商城</h6>
+            <form action="{% url 'ZOL:register' %}" method="post">
+                {% csrf_token %}
+                <span>用户名</span>
+                <br>
+                <input id="username" type="text" placeholder="  请输入用户名(2到16位)" name="username"><i>{{ errors.username }}</i>
+                <br>
+                <span>手机号</span>
+                <br>
+                <input id="phone" type="text" placeholder="  请输入手机号" name="phone"><i>{{ errors.phone }}</i>
+                <br>
+                <span>密码</span>
+                <br>
+                <input id="pwd" type="password" placeholder="  密码(6到18位)" name="password">
+                <i>{{ errors.password }}</i>
+                <br>
+                <span>确认密码</span>
+                <br>
+                <input id="pwdc" type="password" placeholder="  请再次输入密码" name="password2">
+                <i>{{ errors.password2 }}</i>
+                <br>
+                <span>验证码</span>
+                <br>
+                <input class="sure" type="text" placeholder="  输入验证码" name="vcode">
+{#                暂未用ajax进行验证码重载#}
+{#                <a href="{% url 'ZOL:register' %}"><img src="{% url 'ZOL:verifycode' %}" class="code"></a>#}
+                <img src="/ZOL/verifycode/" class="vcode">
+                <br><p style="color: red">{{ msg }}</p>
+                <input id="register" type="submit" value="注册">
+            </form>
+            <div class="linkparter">
+                <ul>
+                    <li>合作账号登录:</li>
+                    <li><img src="/static/img/login/weibo.png" alt=""></li>
+                    <li><img src="/static/img/login/QQ.png" alt=""> </li>
+                    <li><img src="/static/img/login/zhifu.png" alt=""> </li>
+                    <li><img src="/static/img/login/baidu.png" alt=""> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
