@@ -4,9 +4,12 @@
 
 $(function() {
     $("#username").blur(function () {
-        if($(this).val().length < 2 || $("#this").val().length > 16 ) {
-                $(this).next("i").html("用户名长度不对");
-            }
+        if($(this).val().length < 2 || $(this).val().length > 16 ) {
+            $(this).next("i").html("用户名长度不对");
+        }
+        else{
+            $(this).next("i").html("用户名长度正确");
+        }
     });
 
     //手机号验证
@@ -21,9 +24,12 @@ $(function() {
     });
 
     $("#pwd").blur(function () {
-        if($(this).val().length < 6 || $("#this").val().length > 18 ) {
-                $(this).next("i").html("密码长度不对");
-            }
+        if($(this).val().length < 6 || $(this).val().length > 18 ) {
+            $(this).next("i").html("密码长度不对");
+        }
+        else{
+       	    $(this).next("i").html("密码长度正确");
+       	}
     });
 
 
@@ -75,7 +81,7 @@ $(function() {
             return false;
         }
 
-        if ($('#pwd').val().length < 2 || $("#pwd").val().length > 16 ) {
+        if ($('#pwd').val().length < 6 || $("#pwd").val().length > 18 ) {
             alert("密码长度不对");
             return false;
         }
